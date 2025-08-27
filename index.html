@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Study Helper</title>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <h1><i class="fa-solid fa-user"></i> My Study Helper</h1>
+    <nav>
+      <ul>
+        <li><a href="#folders"><i class="fa-solid fa-folder"></i> Folders</a></li>
+      </ul>
+    </nav>
+
+    <!-- Theme toggle -->
+    <button id="themeToggle" title="Toggle theme" aria-label="Toggle theme">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+  </header>
+
+  <main>
+    <section id="folders">
+      <h2><i class="fa-solid fa-folder-open"></i> My Folders</h2>
+
+      <!-- Search -->
+      <input type="text" id="searchInput" placeholder="Search folders...">
+
+      <div id="folderContainer"></div>
+
+      <!-- Add Folder -->
+      <input type="text" id="folderInput" placeholder="Create a new folder">
+      <button id="addFolderBtn"><i class="fa-solid fa-plus"></i> Add Folder</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; My Personal Website</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

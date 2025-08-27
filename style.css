@@ -1,0 +1,322 @@
+:root {
+    --primary: #4e54c8;
+    --secondary: #8f94fb;
+    --light-bg: #f4f4f4;
+    --dark-bg: #2c2c54;
+    --text-color: #333;
+    --white: #fff;
+
+    /* Added for better theming */
+    --panel-bg: #fdfdfd;
+    --border-color: #eee;
+}
+
+/* DARK THEME VARIABLES OVERRIDE */
+body.dark {
+    --light-bg: #121212;
+    --dark-bg: #0f0f1f;
+    --text-color: #e9e9e9;
+    --white: #1c1c1c;
+    --panel-bg: #171717;
+    --border-color: #2c2c2c;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    scroll-behavior: smooth;
+}
+
+/* HEADER */
+header {
+    border: #060202b5;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 12px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 10px;
+    color: #333;
+    padding: 20px 16px;
+    text-align: center;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+body.dark header {
+
+    border: #e9e9e9;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 12px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 10px;
+    color: #e9e9e9;
+    padding: 20px 16px;
+    text-align: center;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+#themeToggle {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    background: rgba(82, 79, 79, 0.15);
+    color: #333;
+    border: 1px solid rgba(255,255,255,0.25);
+    padding: 10px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    backdrop-filter: blur(6px);
+    transition: transform .15s ease, background .2s ease;
+}
+#themeToggle:hover { transform: translateY(-2px); }
+
+body.dark #themeToggle {
+    background: rgba(255, 255, 255, 0.15);
+    color: #e9e9e9;
+    border: 1px solid rgba(0,0,0,0.25);
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+body.dark nav a {
+    color: #e9e9e9;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ffeaa7;
+}
+
+/* MAIN */
+main {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* FOLDERS SECTION */
+#folders h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.folder {
+    background: var(--white);
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.folder:hover {
+    transform: translateY(-3px);
+}
+
+.folder h3 {
+    cursor: pointer;
+    margin: 0;
+    font-size: 1.2em;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* CONTENT INSIDE FOLDER */
+.folder .content {
+    display: none;
+    animation: fadeIn 0.3s ease-in-out;
+    background-color: var(--panel-bg);
+    padding: 15px;
+    border-top: 1px solid var(--border-color);
+    border-radius: 0 0 10px 10px;
+}
+
+.folder .content div {
+    margin-top: 10px;
+    font-size: 0.95em;
+    color: #555;
+}
+
+.folder .content a {
+    color: var(--primary);
+    text-decoration: underline;
+    word-break: break-word;
+}
+
+.folder img {
+    display: inline-block;
+    max-height: 80px;
+    margin-top: 10px;
+    border-radius: 6px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.folder-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delete-btn {
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.delete-btn:hover {
+  background: var(--secondary);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* prevent dark-mode override */
+body.dark .delete-btn {
+  background: var(--primary);
+  color: var(--white);
+}
+
+
+body.dark button:hover {
+    background: var(--primary);
+    box-shadow: 0 4px 12px rgba(255,255,255,0.15);
+}
+
+
+/* FORM ELEMENTS */
+textarea,
+input[type="text"],
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1em;
+    box-sizing: border-box;
+    background: var(--white);
+    color: var(--text-color);
+}
+
+/* BUTTONS */
+button {
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: var(--secondary);
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* FOOTER */
+footer {
+    backdrop-filter: blur(20px);
+    color: #333;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+body.dark footer {
+    backdrop-filter: blur(20px);   
+    color: #f0f0f0;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    header h1 { font-size: 1.8em; }
+    nav ul li { display: block; margin: 10px 0; }
+}
+
+/* small util: inline action buttons inside folders */
+.inline-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+.inline-actions button {
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+/* 📱 Responsive Fix */
+@media (max-width: 600px) {
+  header {
+    text-align: left;
+    padding: 16px;
+  }
+
+  header h1 {
+    font-size: 1.8em;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  #themeToggle {
+    position: static;
+    margin-left: auto;
+    margin-top: 10px;
+    display: block;
+  }
+}
