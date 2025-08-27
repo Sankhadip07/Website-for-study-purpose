@@ -192,7 +192,6 @@ main {
   align-items: center;
 }
 
-/* keep base delete button styles */
 .delete-btn {
   background: var(--primary);
   color: var(--white);
