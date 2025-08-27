@@ -192,28 +192,34 @@ main {
   align-items: center;
 }
 
+/* keep base delete button styles */
 .delete-btn {
   background: var(--primary);
-    color: var(--white);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 6px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: all 0.3s;
-    margin-top: 10px;
+  color: var(--white);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .delete-btn:hover {
-   background: var(--secondary);
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background: var(--secondary);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-body.dark button {
-    background: #333;
-    color: #f4f4f4;
+/* prevent dark-mode override */
+body.dark .delete-btn {
+  background: var(--primary);
+  color: var(--white);
 }
+
 
 body.dark button:hover {
     background: var(--primary);
